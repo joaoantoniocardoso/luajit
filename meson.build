@@ -15,3 +15,6 @@ dynasm = files('dynasm/dynasm.lua')
 install_man('etc/luajit.1')
 
 subdir('src')
+
+luajit_dep = declare_dependency(link_with : libluajit,
+  include_directories : luajit_source_dir, compile_args: lj_defines)
